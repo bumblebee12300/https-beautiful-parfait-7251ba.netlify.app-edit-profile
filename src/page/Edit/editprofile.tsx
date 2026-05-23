@@ -20,7 +20,7 @@ export default function EditProfile() {
   const [phone, setPhone] = useState(profile.phone);
 
   const handleSave = () => {
-    navigate("/profile");
+    navigate("/dashboard/profile");
   };
 
   return (
