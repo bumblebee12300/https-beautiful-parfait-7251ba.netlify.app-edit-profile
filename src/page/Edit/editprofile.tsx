@@ -20,7 +20,6 @@ export default function EditProfile() {
   const [phone, setPhone] = useState(profile.phone);
 
   const handleSave = () => {
-    // updated data
     const updatedProfile = {
       name,
       surname,
@@ -29,10 +28,11 @@ export default function EditProfile() {
       phone,
     };
 
-    // dashboardga o‘tadi + data yuboradi
-    navigate("/dashboard", {
-      state: { profile: updatedProfile },
-    });
+    // SAVE TO LOCALSTORAGE
+    localStorage.setItem("profile", JSON.stringify(updatedProfile));
+
+    // GO DASHBOARD
+    navigate("/dashboard");
   };
 
   return (
