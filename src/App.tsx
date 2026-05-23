@@ -25,13 +25,8 @@ function App() {
       {/* DASHBOARD ROUTES */}
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
-
         <Route path="profile" element={<Profile />} />
-
-        <Route
-          path="edit-profile"
-          element={<EditProfile />}
-        />
+        <Route path="edit-profile" element={<EditProfile />} />
       </Route>
     </Routes>
   );
