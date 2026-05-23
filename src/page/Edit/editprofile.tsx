@@ -20,15 +20,25 @@ export default function EditProfile() {
   const [phone, setPhone] = useState(profile.phone);
 
   const handleSave = () => {
-    navigate("/dashboard/profile");
+    // updated data
+    const updatedProfile = {
+      name,
+      surname,
+      job,
+      telegram,
+      phone,
+    };
+
+    // dashboardga o‘tadi + data yuboradi
+    navigate("/dashboard", {
+      state: { profile: updatedProfile },
+    });
   };
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
       <div className="w-[450px] bg-white p-6 rounded-2xl shadow-lg">
-        <h1 className="text-2xl font-bold mb-5">
-          Edit Profile
-        </h1>
+        <h1 className="text-2xl font-bold mb-5">Edit Profile</h1>
 
         <input
           className="border p-3 rounded-lg w-full mb-3"
